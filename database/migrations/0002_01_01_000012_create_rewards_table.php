@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('rewards', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name'); // Name of the customer
+            $table->unsignedTinyInteger('rating'); // Rating out of 5
+            $table->text('description')->nullable(); // Description or feedback
+            $table->timestamp('review_date')->nullable(); // Date of the review
+            $table->timestamps(); // created_at & updated_at
         });
     }
 
