@@ -13,13 +13,22 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use UnitEnum;
+use Illuminate\Support\Facades\Auth;
 
 class TransactionResource extends Resource
 {
     protected static ?string $model = Transaction::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static ?int $navigationSort = 2;
+
+    protected static ?int $navigationGroupSort = 2;
+
+
+    protected static ?string $navigationLabel = 'Daftar Transaksi';
 
     protected static ?string $recordTitleAttribute = 'Product';
 
@@ -49,5 +58,15 @@ class TransactionResource extends Resource
             'create' => CreateTransaction::route('/create'),
             'edit' => EditTransaction::route('/{record}/edit'),
         ];
+    }
+
+    public static function canCreate(): bool
+    {
+        return Auth::user()->hasRole('admin');
+    }
+
+    public static function canEdit($record): bool
+    {
+        return Auth::user()->hasRole('admin') || Auth::user()->hasRole('owner');
     }
 }
