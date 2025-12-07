@@ -6,17 +6,18 @@
 
 #### Management
 
-    - Dashboard
-    - Product Management
-    - Record Transaction
-    - Sales Management
-    - Review Management
+- Dashboard
+- Product Management
+
+- Record Transaction
+- Sales Management
+- Review Management
 
 #### Security
 
-    - Login Page
-    - Editing Profile
-    - Activity Logs
+- Login Page
+- Editing Profile
+- Activity Logs
 
 ## Developer Documentation
 
@@ -24,10 +25,10 @@
 
 This program is build with:
 
-    - Framework: Laravel
-    - Login: Breeze
-    - Role Permission: Spatie
-    - Dashboard Management: Filament
+- Framework: Laravel
+- Login: Breeze
+- Role Permission: Spatie
+- Dashboard Management: Filament
 
 ### How To Use
 
