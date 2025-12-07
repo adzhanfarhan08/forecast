@@ -35,15 +35,19 @@ Just running this syntax if you using VScode you can Right Click and Run. This f
 
 #### Step 1
 
+This script funtional to installing all dependency required
+
 install-dependency.bat
 
 #### Step 2
+
+This script funtional to freshing your database and add seeder in your database
 
 new-migration.bat
 
 #### Optional
 
-Added Seeder
+This script funtional to adding seeder in your database
 
 add-seeder.bat
 
