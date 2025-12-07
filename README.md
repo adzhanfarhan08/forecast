@@ -8,7 +8,6 @@
 
 - Dashboard
 - Product Management
-
 - Record Transaction
 - Sales Management
 - Review Management
