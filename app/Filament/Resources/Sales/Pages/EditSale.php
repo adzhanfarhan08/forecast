@@ -6,6 +6,7 @@ use App\Filament\Resources\Sales\SaleResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Transaction;
 
 class EditSale extends EditRecord
 {
@@ -22,5 +23,17 @@ class EditSale extends EditRecord
     {
         $data['user_id'] = Auth::id();
         return $data;
+    }
+
+    protected function afterSave(): void
+    {
+        $sale = $this->record;
+
+        Transaction::create([
+            'sale_id' => $sale->id,
+            'amount'  => $sale->total,
+            'user_id' => Auth::id(),
+            'type'    => 'update'
+        ]);
     }
 }

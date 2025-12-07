@@ -21,13 +21,15 @@ class SaleResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 20;
+
+    protected static ?int $navigationGroupSort = 20;
 
     protected static ?string $navigationLabel = 'Input Penjualan';
 
     protected static ?string $recordTitleAttribute = 'Sales';
 
-    protected static string | UnitEnum | null $navigationGroup = 'Billing';
+    protected static string | UnitEnum | null $navigationGroup = 'Bill';
 
     public static function form(Schema $schema): Schema
     {

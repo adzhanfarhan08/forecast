@@ -27,6 +27,11 @@ class Sale extends Model
         return $this->belongsTo(Product::class);
     }
 
+    public function transaction()
+    {
+        return $this->hasOne(Transaction::class);
+    }
+
     // public static function mutateFormDataBeforeCreate(array $data): array
     // {
     //     $data['total'] = $data['quantity'] * $data['price'];
