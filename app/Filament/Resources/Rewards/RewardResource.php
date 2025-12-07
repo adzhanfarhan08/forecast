@@ -21,13 +21,15 @@ class RewardResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = 21;
 
-    protected static ?string $navigationLabel = 'Pengelolaan Reward';
+    protected static ?int $navigationGroupSort = 21;
+
+    protected static ?string $navigationLabel = 'Kelola Review';
 
     protected static ?string $recordTitleAttribute = 'Reward';
 
-    protected static string | UnitEnum | null $navigationGroup = 'Billing';
+    protected static string | UnitEnum | null $navigationGroup = 'Bill';
 
     public static function form(Schema $schema): Schema
     {
