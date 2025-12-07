@@ -14,6 +14,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
+use Illuminate\Support\Facades\Auth;
 
 class ProductResource extends Resource
 {
@@ -22,6 +23,8 @@ class ProductResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?int $navigationSort = 1;
+
+    protected static ?int $navigationGroupSort = 1;
 
     protected static ?string $navigationLabel = 'Input Produk';
 
@@ -53,5 +56,10 @@ class ProductResource extends Resource
             'create' => CreateProduct::route('/create'),
             'edit' => EditProduct::route('/{record}/edit'),
         ];
+    }
+
+    public static function canViewAny(): bool
+    {
+        return Auth::user()->hasRole('admin') || Auth::user()->hasRole('owner') || Auth::user()->hasRole('employee');
     }
 }
