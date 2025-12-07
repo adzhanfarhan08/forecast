@@ -31,32 +31,34 @@ This program is build with:
 
 ### How To Use
 
+Just running this syntax if you using VScode you can Right Click and Run. This file I saved in custom-tools/automation-command in root file.
+
 #### Step 1
 
-```NPM
-npm install
-```
+install-dependency.bat
 
 #### Step 2
 
-```Composer
-composer update
-```
+new-migration.bat
 
-#### Step 3
+#### Optional
 
-```Fresh Migration
-php artisan migrate:fresh
-```
+Added Seeder
 
-Optional
+add-seeder.bat
 
-```Added Seeder
-php artisan db:seed
-```
+#### Tips
+
+If you want to create new resource just follow this syntax or read Filament documentation
 
 Create Resource
+
+```Create Resource
 php artisan make:filament-resource {Name Model}
+```
 
 Create model
+
+```Create model
 php artisan make:model {Name Model} -m
+```
