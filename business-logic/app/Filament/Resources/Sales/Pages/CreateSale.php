@@ -16,10 +16,10 @@ class CreateSale extends CreateRecord
     {
         $data['user_id'] = Auth::id(); // Set the user_id to the currently authenticated user
 
-        $product = Product::find($data['product_id']);
+        // $product = Product::find($data['product_id']);
 
-        $product->stock -= $data['quantity'];
-        $product->save();
+        // $product->stock -= $data['quantity'];
+        // $product->save();
 
         return $data;
     }

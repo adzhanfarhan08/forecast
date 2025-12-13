@@ -20,22 +20,25 @@ class SalesTable
                     ->sortable()
                     ->searchable(),
 
-                TextColumn::make('product.name')
+                TextColumn::make('salesItems.product.name')
                     ->searchable()
                     ->sortable(),
 
-                TextColumn::make('quantity')
+                TextColumn::make('salesItems.quantity')
+                    ->label('Quantity')
                     ->sortable(),
 
-                TextColumn::make('price')
+                TextColumn::make('salesItems.price')
+                    ->label('Price')
                     ->money('idr', true)
                     ->sortable(),
 
-                TextColumn::make('total')
+                TextColumn::make('salesItems.total')
+                    ->label('Total')
                     ->money('idr', true)
                     ->sortable(),
 
-                TextColumn::make('sale_date')
+                TextColumn::make('salesItems.sale_date')
                     ->date()
                     ->sortable(),
             ])
